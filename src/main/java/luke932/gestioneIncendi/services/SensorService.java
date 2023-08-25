@@ -1,5 +1,6 @@
 package luke932.gestioneIncendi.services;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,6 +17,11 @@ public class SensorService {
 	@Autowired
 	public SensorService(NotificationService notificationService) {
 		this.notificationService = notificationService;
+	}
+
+	public void createSensor(int id, double latitude, double longitude) {
+		Sensor newSensor = new Sensor(id, latitude, longitude, 0, new ArrayList<>(), notificationService);
+		sensorMap.put(id, newSensor);
 	}
 
 	public void updateSmokeLevel(int id, int smokeLevel) {

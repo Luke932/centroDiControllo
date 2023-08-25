@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import luke932.gestioneIncendi.notifications.FireAlarmObserver;
+import luke932.gestioneIncendi.services.NotificationService;
 
 @AllArgsConstructor
 @Getter
@@ -17,6 +18,7 @@ public class Sensor {
 	private double longitude;
 	private int smokeLevel;
 	private List<FireAlarmObserver> observers = new ArrayList<>();
+	private final NotificationService notificationService;
 
 	public void addFireAlarmObserver(FireAlarmObserver observer) {
 		observers.add(observer);
@@ -26,6 +28,7 @@ public class Sensor {
 		this.smokeLevel = smokeLevel;
 		if (smokeLevel > 5) {
 			notifyObservers();
+			notificationService.sendFireAlarmNotification(latitude, longitude, smokeLevel);
 		}
 	}
 
@@ -34,5 +37,4 @@ public class Sensor {
 			observer.onFireAlarm(this);
 		}
 	}
-
 }
