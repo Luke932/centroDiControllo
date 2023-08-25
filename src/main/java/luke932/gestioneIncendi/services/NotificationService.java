@@ -9,6 +9,8 @@ public class NotificationService {
 
 	public void sendFireAlarmNotification(double latitude, double longitude, int smokeLevel) {
 		String url = "http://localhost:3001/alarm?lat=" + latitude + "&long=" + longitude + "&smokelevel=" + smokeLevel;
+		System.out.println("Attenzione incendio con posizione di latitudine " + latitude + "e di longitudine "
+				+ longitude + "con livello di fumo di " + smokeLevel);
 		System.out.println("URL della notifica: " + url);
 
 		// Implementazione nel caso in cui avessimo un centro di controllo con questo
