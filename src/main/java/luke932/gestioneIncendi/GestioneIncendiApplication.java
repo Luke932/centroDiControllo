@@ -24,7 +24,7 @@ public class GestioneIncendiApplication {
 			sensorService.createSensor(i, latitude, longitude);
 		}
 
-		sensorService.updateSmokeLevel(1, 6);
+		sensorService.updateSmokeLevel(1, 4);
 		sensorService.updateSmokeLevel(2, 8);
 		sensorService.updateSmokeLevel(3, 7);
 		sensorService.updateSmokeLevel(4, 10);

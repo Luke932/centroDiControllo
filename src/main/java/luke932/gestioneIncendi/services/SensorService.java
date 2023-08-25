@@ -34,4 +34,8 @@ public class SensorService {
 	public NotificationService getNotificationService() {
 		return notificationService;
 	}
+
+	public Object getSensor(int id) {
+		return id;
+	}
 }

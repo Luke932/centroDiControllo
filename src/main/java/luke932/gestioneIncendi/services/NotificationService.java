@@ -15,7 +15,7 @@ public class NotificationService {
 
 		// Implementazione nel caso in cui avessimo un centro di controllo con questo
 		// URL nel caso scommentassi questo
-		// codice avremmo un messaggio di errore, on questa applicazione stampo a video
+		// codice avremmo un messaggio di errore, con questa applicazione stampo a video
 		// l'url che arriverebbe al centro di
 		// controllo con i livelli di fumo superiori a 5.
 
